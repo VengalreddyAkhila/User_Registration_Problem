@@ -8,7 +8,8 @@ namespace Registration_Problem
         {
             Console.WriteLine("Welcome to Registraion problem");           
             Registration registration = new Registration();
-            Console.WriteLine(registration.validateFirstname("Rmun"));
+            Console.WriteLine(registration.validateFirstname("Ram"));
+            Console.WriteLine(registration.validateLastname("Anu"));
 
         }
     }
