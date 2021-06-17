@@ -10,7 +10,7 @@ namespace Registration_Problem
             Registration registration = new Registration();
             Console.WriteLine(registration.validateFirstname("Ram"));
             Console.WriteLine(registration.validateLastname("Anu"));
-
+            Console.WriteLine(registration.validateEmail("akhila123@gmail.com"));
         }
     }
 }
