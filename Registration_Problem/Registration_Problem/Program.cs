@@ -11,6 +11,7 @@ namespace Registration_Problem
             Console.WriteLine(registration.validateFirstname("Ram"));
             Console.WriteLine(registration.validateLastname("Anu"));
             Console.WriteLine(registration.validateEmail("akhila123@gmail.com"));
+            Console.WriteLine(registration.validatePhonenumber("+919908556919"));
         }
     }
 }
