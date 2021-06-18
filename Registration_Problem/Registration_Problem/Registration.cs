@@ -29,7 +29,7 @@ namespace Registration_Problem
         /// <summary>
         /// UC3-validating the valid email id
         /// </summary>
-        string REGEX_EMAIL = "^[A-Za-z0-9]{3,10}@[A-Za-z]{3,10}.(com|co.in|co.uk)$";
+        string REGEX_EMAIL = "^[A-Za-z0-9.]{3,20}@[a-z]{3,20}.(com)$";
         public bool validateEmail(string Email)
         {
             return Regex.IsMatch(Email, REGEX_EMAIL);
@@ -56,10 +56,18 @@ namespace Registration_Problem
         /// <summary>
         /// UC6-validating the password with Atleast one uppercase
         /// </summary>
-        string REGEX_PASSWORD_UPPERCASE = "^[A-Z]{1,8}";
+        string REGEX_PASSWORD_UPPERCASE = "^(?=.*[A-Z])(?=.*[a-z]).{8}$";
         public bool validatePassworduppercase(string passworduppercase)
         {
             return Regex.IsMatch(passworduppercase, REGEX_PASSWORD_UPPERCASE);
+        }
+        /// <summary>
+        /// UC7-validating the password with Atleast one numeric
+        /// </summary>
+        string REGEX_PASSWORD_NUMERIC = "^(?=.*[A-Z])(?=.*[0-9]).{8}$";
+        public bool validatePasswordnumeric(string passwordnumeric)
+        {
+            return Regex.IsMatch(passwordnumeric, REGEX_PASSWORD_NUMERIC);
         }
 
     }

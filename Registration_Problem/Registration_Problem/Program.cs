@@ -14,6 +14,7 @@ namespace Registration_Problem
             Console.WriteLine(registration.validatePhonenumber("+919908556919"));
             Console.WriteLine(registration.validatePassword("abc132ef"));
             Console.WriteLine(registration.validatePassworduppercase("Akhila12"));
+            Console.WriteLine(registration.validatePasswordnumeric("Akhila12"));
         }
     }
 }
