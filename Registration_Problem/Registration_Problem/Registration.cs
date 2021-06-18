@@ -5,32 +5,62 @@ using System.Text.RegularExpressions;
 
 namespace Registration_Problem
 {
+    /// <summary>
+    /// Validating the user details with boolean
+    /// </summary>
     class Registration
     {
-        string REGEX_FIRSTNAME = "^[A-Za-z]{3}$";
-        string REGEX_LASTNAME = "^[A-Za-z]{3}$";
-        string REGEX_EMAIL = "^[A-Za-z0-9]{3,10}@[A-Za-z]{3,10}.(com|co.in|co.uk)$";
-        string REGEX_PHONE_NUMBER = "^([0\\+[0-9]{1,4})([0-9]{9,10})$";
-        string REGEX_PASSWORD = "^[A-Za-z0-9]{8,10}$";
+        /// <summary>
+        /// UC1-validating Firstname with Caps and minimum 3 character
+        /// </summary>
+        string REGEX_FIRSTNAME = "^[A-Za-z]{3}$";       
         public bool validateFirstname(string firstname)
         {
             return Regex.IsMatch(firstname, REGEX_FIRSTNAME);
         }
+        /// <summary>
+        ///UC2- validating lastname with Caps and minimum 3 characters
+        /// </summary>
+        string REGEX_LASTNAME = "^[A-Za-z]{3}$";
         public bool validateLastname(string lastname)
         {
             return Regex.IsMatch(lastname, REGEX_LASTNAME);
         }
+        /// <summary>
+        /// UC3-validating the valid email id
+        /// </summary>
+        string REGEX_EMAIL = "^[A-Za-z0-9]{3,10}@[A-Za-z]{3,10}.(com|co.in|co.uk)$";
         public bool validateEmail(string Email)
         {
             return Regex.IsMatch(Email, REGEX_EMAIL);
         }
+        /// <summary>
+        /// UC4-validating the predefined mobile number with country code
+        /// </summary>
+        string REGEX_PHONE_NUMBER = "^([0\\+[0-9]{1,4})([0-9]{9,10})$";
         public bool validatePhonenumber(string phonenumber)
         {
             return Regex.IsMatch(phonenumber, REGEX_PHONE_NUMBER);
         }
+        /// <summary>
+        /// UC5-validating the password with minimum 8 characters
+        /// </summary>
+
+        string REGEX_PASSWORD = "^[A-Za-z0-9]{8}$";
+       
         public bool validatePassword(string password)
         {
             return Regex.IsMatch(password, REGEX_PASSWORD);
+           
         }
+        /// <summary>
+        /// UC6-validating the password with Atleast one uppercase
+        /// </summary>
+        string REGEX_PASSWORD_UPPERCASE = "^[A-Z]{1,8}";
+        public bool validatePassworduppercase(string passworduppercase)
+        {
+            return Regex.IsMatch(passworduppercase, REGEX_PASSWORD_UPPERCASE);
+        }
+
     }
 }
