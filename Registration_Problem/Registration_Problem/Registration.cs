@@ -70,5 +70,15 @@ namespace Registration_Problem
             return Regex.IsMatch(passwordnumeric, REGEX_PASSWORD_NUMERIC);
         }
 
+            /// <summary>
+            /// UC8-validating the password with special charecters
+            /// </summary>
+            string REGEX_PASSWORD_SPCLCHAR = "^(?=.*[A-Z])(?=.*[0-9])(?=.*[~!@#$%^&*()]).{8,}$";
+            public bool validatePasswordspclchar(string passwordspclchar)
+            {
+                return Regex.IsMatch(passwordspclchar, REGEX_PASSWORD_SPCLCHAR);
+            }
+
+
+        }
     }
-}

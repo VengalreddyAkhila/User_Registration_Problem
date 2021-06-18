@@ -15,6 +15,7 @@ namespace Registration_Problem
             Console.WriteLine(registration.validatePassword("abc132ef"));
             Console.WriteLine(registration.validatePassworduppercase("Akhila12"));
             Console.WriteLine(registration.validatePasswordnumeric("Akhila12"));
+            Console.WriteLine(registration.validatePasswordnumeric("Akhil@12"));
         }
     }
 }
