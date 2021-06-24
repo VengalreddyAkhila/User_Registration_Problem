@@ -6,79 +6,105 @@ using System.Text.RegularExpressions;
 namespace Registration_Problem
 {
     /// <summary>
-    /// Validating the user details with boolean
+    /// Validating the user details with boolean and exceptions
     /// </summary>
-    class Registration
+    public class Registration
     {
         /// <summary>
         /// UC1-validating Firstname with Caps and minimum 3 character
+        /// UC2-validating Lastname with caps and minimum 3 cahracters
         /// </summary>
-        string REGEX_FIRSTNAME = "^[A-Za-z]{3}$";       
-        public bool validateFirstname(string firstname)
+        public bool ValidateFirstName(string firstName)
         {
-            return Regex.IsMatch(firstname, REGEX_FIRSTNAME);
+            string ValidateName = "^[A-Za-z]{3}$";
+            try
+            {
+                if (Regex.IsMatch(firstName, ValidateName))
+                {
+                    Console.WriteLine(" valid firstname");                    
+                }
+                else
+                {
+                    Console.WriteLine("INVALID");                    
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return false;
         }
         /// <summary>
-        ///UC2- validating lastname with Caps and minimum 3 characters
-        /// </summary>
-        string REGEX_LASTNAME = "^[A-Za-z]{3}$";
-        public bool validateLastname(string lastname)
+        /// UC3-validating the valid email id 
+        /// </summary>        
+        public bool ValidateEmail(string Email)
         {
-            return Regex.IsMatch(lastname, REGEX_LASTNAME);
-        }
-        /// <summary>
-        /// UC3-validating the valid email id
-        /// </summary>
-        string REGEX_EMAIL = "^[A-Za-z0-9.]{3,20}@[a-z]{3,20}.(com)$";
-        public bool validateEmail(string Email)
-        {
-            return Regex.IsMatch(Email, REGEX_EMAIL);
+            string ValidateEmail = "^[A-Za-z0-9]+[.+-]{0,1}[0-9a-zA-Z]+@[A-Za-z]+[.][A-Za-z]{2,3}(.[a-zA-Z]{2,3}){0,1}$";
+            try
+            {
+                if (Regex.IsMatch(Email, ValidateEmail))
+                {
+                    Console.WriteLine(" valid email id");
+                }
+                else
+                {
+                    Console.WriteLine("INVALID");
+                }
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return false;
         }
         /// <summary>
         /// UC4-validating the predefined mobile number with country code
-        /// </summary>
-        string REGEX_PHONE_NUMBER = "^([0\\+[0-9]{1,4})([0-9]{9,10})$";
-        public bool validatePhonenumber(string phonenumber)
+        /// </summary>       
+        public bool ValidatePhonenumber(string phonenumber)
         {
-            return Regex.IsMatch(phonenumber, REGEX_PHONE_NUMBER);
+            string ValidatePhonenumber = "^[0-9]{1,4}\\([0-9]{9,10})$";
+            try
+            {
+                if (Regex.IsMatch(phonenumber, ValidatePhonenumber))
+                {
+                    Console.WriteLine(" valid phonenumber");
+                }
+                else
+                {
+                    Console.WriteLine("INVALID");
+                }
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return false;
         }
         /// <summary>
         /// UC5-validating the password with minimum 8 characters
-        /// </summary>
-
-        string REGEX_PASSWORD = "^[A-Za-z0-9]{8}$";
-       
-        public bool validatePassword(string password)
+        /// UC6-Validating the password with atleast one uppercase
+        /// Uc7-validating the password with atleast one numeric
+        /// UC8-validating the password with spcl cahracters
+        /// </summary>       
+        public bool ValidatePassword(string password)
         {
-            return Regex.IsMatch(password, REGEX_PASSWORD);
-           
-        }
-        /// <summary>
-        /// UC6-validating the password with Atleast one uppercase
-        /// </summary>
-        string REGEX_PASSWORD_UPPERCASE = "^(?=.*[A-Z])(?=.*[a-z]).{8}$";
-        public bool validatePassworduppercase(string passworduppercase)
-        {
-            return Regex.IsMatch(passworduppercase, REGEX_PASSWORD_UPPERCASE);
-        }
-        /// <summary>
-        /// UC7-validating the password with Atleast one numeric
-        /// </summary>
-        string REGEX_PASSWORD_NUMERIC = "^(?=.*[A-Z])(?=.*[0-9]).{8}$";
-        public bool validatePasswordnumeric(string passwordnumeric)
-        {
-            return Regex.IsMatch(passwordnumeric, REGEX_PASSWORD_NUMERIC);
-        }
-
-            /// <summary>
-            /// UC8-validating the password with special charecters
-            /// </summary>
-            string REGEX_PASSWORD_SPCLCHAR = "^(?=.*[A-Z])(?=.*[0-9])(?=.*[~!@#$%^&*()]).{8,}$";
-            public bool validatePasswordspclchar(string passwordspclchar)
+            string ValidatePassword = "^(?=.*[A-Z])(?=.*[0-9])(?=.*[~!@#$%^&*()]).{8,}$";
+            try
             {
-                return Regex.IsMatch(passwordspclchar, REGEX_PASSWORD_SPCLCHAR);
+                if (Regex.IsMatch(password, ValidatePassword))
+                {
+                    Console.WriteLine(" valid password");
+                }
+                else
+                {
+                    Console.WriteLine("INVALID");
+                }
             }
-
-
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return false;
         }
     }
+}

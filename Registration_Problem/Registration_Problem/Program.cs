@@ -6,16 +6,20 @@ namespace Registration_Problem
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to Registraion problem");           
+            Console.WriteLine("Welcome to Registraion problem");
             Registration registration = new Registration();
-            Console.WriteLine(registration.validateFirstname("Ram"));
-            Console.WriteLine(registration.validateLastname("Anu"));
-            Console.WriteLine(registration.validateEmail("akhila123@gmail.com"));
-            Console.WriteLine(registration.validatePhonenumber("+919908556919"));
-            Console.WriteLine(registration.validatePassword("abc132ef"));
-            Console.WriteLine(registration.validatePassworduppercase("Akhila12"));
-            Console.WriteLine(registration.validatePasswordnumeric("Akhila12"));
-            Console.WriteLine(registration.validatePasswordnumeric("Akhil@12"));
+            Console.WriteLine("enter first name with starting caps and minimum three characters");
+            string firstname = Console.ReadLine();        
+            registration.ValidateFirstName(firstname);
+            Console.WriteLine("enter Email id ");
+            string emailid = Console.ReadLine();
+            registration.ValidateEmail(emailid);
+            Console.WriteLine("enter phone number with predefined country code with space");
+            string phonenumber = Console.ReadLine();
+            registration.ValidatePhonenumber(phonenumber);
+            Console.WriteLine("enter password atleast one caps ,numerics and special characters");
+            string password = Console.ReadLine();
+            registration.ValidatePassword(password);           
         }
     }
 }
